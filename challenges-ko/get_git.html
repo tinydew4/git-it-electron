@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Git-it</title>
+    <link rel="stylesheet" href="../assets/css/2-double-bounce.css">
+    <link rel="stylesheet" href="../assets/css/new-style.css">
+    <link rel="stylesheet" href="../assets/css/new-challenge.css">
+    <link rel="stylesheet" href="../assets/css/new-challenge-ko.css">
+    <link rel="stylesheet" href="../assets/css/buttons.css">
+  </head>
+  <body>
+    <header id="challenge-header" class="site-header">
+  <div class="lang-select">
+    <select id="lang-select" class="btn-outline lang-select">
+      <option value="">English</option>
+      <option value="zhtw">正體中文</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+    </select>
+  </div>
+  <a class="filledblock" href="../index-ko.html">
+    Git-it
+  </a>
+  <span class="challenge-title">git 설치</span>
+</header>
+
+<script type="text/javascript">
+  var selector = document.getElementById('lang-select')
+  // TODO put lang somewhere else that we can get without needing template in JS
+  // Can also remove default '-' with lang
+  var currentLang = "".replace(/-/, '')
+  selector.value = currentLang
+  selector.addEventListener('change', function () {
+    var currentChallenge = document.querySelector('.challenge-item.current')
+    var dir = 'challenges' + (selector.value ? '-' + selector.value : '') + '/'
+    var url = currentChallenge.href.replace(/challenges(.+)?\//, dir)
+    // TODO pass to languages.js rather than set global
+    location.href = url
+  })
+</script>
+
+    <div class="wrapper" id="challenge-body">
+      <div id="challenge-sidebar" class="sidebar">
+  <ul class="list-of-challenges">
+    <h3>도전</h3>
+      <li>
+        <a id="get_git" data-id="0" href="get_git.html" class="challenge-item current">
+          <div class="current-arrow">▶️</div>
+          git 설치
+        </a>
+      </li>
+      <li>
+        <a id="repository" data-id="1" href="repository.html" class="challenge-item">
+          <div class="current-arrow">▶️</div>
+          저장소
+        </a>
+      </li>
+      <li>
+        <a id="commit_to_it" data-id="2" href="commit_to_it.html" class="challenge-item">
+          <div class="current-arrow">▶️</div>
+          커밋하기
+        </a>
+      </li>
+      <li>
+        <a id="githubbin" data-id="3" href="githubbin.html" class="challenge-item">
+          <div class="current-arrow">▶️</div>
+          GitHubbin
+        </a>
+      </li>
+      <li>
+        <a id="remote_control" data-id="4" href="remote_control.html" class="challenge-item">
+          <div class="current-arrow">▶️</div>
+          원격지 제어
+        </a>
+      </li>
+      <li>
+        <a id="forks_and_clones" data-id="5" href="forks_and_clones.html" class="challenge-item">
+          <div class="current-arrow">▶️</div>
+          포크와 복제
+        </a>
+      </li>
+      <li>
+        <a id="branches_arent_just_for_birds" data-id="6" href="branches_arent_just_for_birds.html" class="challenge-item">
+          <div class="current-arrow">▶️</div>
+          branches aren&#x27;t just for birds
+        </a>
+      </li>
+      <li>
+        <a id="its_a_small_world" data-id="7" href="its_a_small_world.html" class="challenge-item">
+          <div class="current-arrow">▶️</div>
+          it&#x27;s a small world
+        </a>
+      </li>
+      <li>
+        <a id="pull_never_out_of_date" data-id="8" href="pull_never_out_of_date.html" class="challenge-item">
+          <div class="current-arrow">▶️</div>
+          pull never out of date
+        </a>
+      </li>
+      <li>
+        <a id="requesting_you_pull_please" data-id="9" href="requesting_you_pull_please.html" class="challenge-item">
+          <div class="current-arrow">▶️</div>
+          requesting you pull please
+        </a>
+      </li>
+      <li>
+        <a id="merge_tada" data-id="10" href="merge_tada.html" class="challenge-item">
+          <div class="current-arrow">▶️</div>
+          merge tada
+        </a>
+      </li>
+  </ul>
+
+</div>
+      <div class="content">
+        <div id="challenge-desc" class="chal-goal blue-border border-box">
+  <p>Git 을 설치하고 이름과 이메일을 설정합니다.</p>
+</div>
+
+<div class="chal-background light-blue solid-box">
+  <h2>Git</h2>
+  <p>Git 은 리눅스 운영체제를 만든 리누스 토발즈에 의해 만들어진 무료 <strong>공개 소스 소프트웨어</strong> (<a href="https://github.com/git/git">소스 코드가 공개되있습니다</a>) 입니다.</p>
+  <p>Git 은 알려진 시간에 따른 변경사항을 추적하기 위한 프로그램이며, 프로그래밍에서 <strong>버전 제어</strong>로 알려졌습니다. 당신이 텍스트 편집 소프트웨어에서 변경사항 추적 기능을 사용하고 있다면 이미 이 개념에 익숙한 것 입니다!</p>
+</div>
+
+<div class="chal-step blue-border border-box">
+  <h3>Git 설치</h3>
+  <p>우리는 <a href="https://desktop.github.com">GitHub 데스크탑</a> 앱을 내려받아 Git 을 설치하기를 권합니다. Git-it 에서 데스크탑 앱을 사용하진 않을 것 입니다 (우리는 터미널에서 배웁니다). 그러나 그것은 Git 을 포함하고 있고 모든 플랫폼에서 같은 방법으로 Git 을 설치하는 가장 쉬운 방법입니다.</p>
+
+  <ul>
+    <li><strong>Windows</strong>: 터미널에서 <strong>Git 쉘</strong>을 사용하세요.</li>
+    <li><strong>Mac</strong>: GitHub 데스크탑을 열고 환경설정에서 명령줄 도구 설치를 선택하세요. 터미널로 <strong>terminal</strong> 앱을 사용하세요.</li>
+  </ul>
+
+  <p>이미 Git 이 있거나 확실하지 않은가요? 터미널에서 <code>git --version</code> 을 입력하였을 때, 보여지는 버전 숫자가 <code>1.7.10</code> 보다 크다면 설정된 것 입니다! 자세한 내용은 <a href="http://git-scm.com">Git 웹사이트</a>를 방문하세요.</p>
+</div>
+
+<div class="chal-background light-blue solid-box">
+  <h2>Git 소프트웨어</h2>
+  <p>GitHub 데스크탑 앱은 Git 으로 많은 것을 할 수 있지만, 전부는 아닙니다. 그래서 터미널을 배우는 것이 중요합니다. 그러나 한번 배우고나면, 데스크탑앱을 사용하는 것이 좋습니다. GitHub 웹사이트와 같이 프로젝트의 정보를 보다 시각적으로 구성해주기 때문입니다.</p>
+
+  <p>자체의 Git 은 컴퓨터에 있는 다른 프로그램과 같지않습니다. 데스크탑 아이콘으로 표시되지 않지만, 항상 사용가능합니다. 터미널 또는 Git 데스크탑 애플리케이션에서 언제든 접근할 수 있습니다.</p>
+</div>
+
+<div class="chal-step blue-border border-box">
+<h3>Git 환경설정</h3>
+  <p>GitHub 데스크탑 (과 Git) 설치가 완료된 뒤, <strong>터미널</strong>을 여세요.
+  다음을 입력하여 Git 이 잘 설치되었는지 확인할 수 있습니다:</p>
+
+  <p><code class="shell">git --version </code></p>
+
+  <p>이것은 다음과 같이 Git 버전을 보여줄 것입니다:</p>
+
+  <p><code class="comment">git version 1.9.1</code></p>
+
+  <p>다음, 작업을 당신이 했음을 알게 해주는 설정을 합니다:</p>
+  <p>이름 설정하세요:</p>
+  <p><code class="shell">git config --global user.name "Your Name"</code></p>
+  <p>이제 이메일을 설정하세요:</p>
+  <p><code class="shell">git config --global user.email "youremail@example.com"</code></p>
+
+  <p>첫 도전을 완수했습니다! '확인' 버튼을 눌러 결과를 확인하세요.</p>
+</div>
+
+<div class="verify bold-blue solid-box">
+  <button class="btn-white" id='verify-challenge'>확인</button>
+  <div id="verify-spinner" class="sk-double-bounce">
+    <div class="sk-child sk-double-bounce1"></div>
+    <div class="sk-child sk-double-bounce2"></div>
+  </div>
+  <ul id="verify-list">
+  </ul>
+  <button class="btn-white" id="clear-completed-challenge">완료 상태 초기화</button>
+</div>
+
+<div class="chal-tip grey-border border-box">
+  <h3>코드 문서에서 달러 기호</h3>
+  <p>달러 기호 <code>$</code> 는 종종 프로그래밍 문서에서 그 줄이 <strong>명령줄</strong> 코드임을 나타내는데 사용됩니다 (위의 코드를 참조하세요). <code>$</code> 를 입력하지않고, 다음에 오는 것만 입력하세요.</p>
+</div>
+
+        <div class="prenext">
+  <div class="u-floatLeft">
+    <a href="../index.html" class="u-inline-block all-caps">모든 도전
+    <div class="arrow-left"></div>
+    </a>
+  </div>
+  <div class="u-textRight u-floatRight">
+    <a href="repository.html" class="u-inlineBlock all-caps">저장소
+    <div class="arrow-right"></div>
+    </a>
+  </div>
+</div>
+      </div>
+    </div>
+
+    <script>
+      var challengeStatus = require('../lib/challenge-completed.js')
+      // TODO Get this from the DOM and don't do template in JS
+      var currentChallenge = 'get_git'
+      challengeStatus.completed(currentChallenge)
+    </script>
+
+    <script>require('../lib/handle-external-links.js')</script>
+    <script>require('../lib/languages.js')</script>
+    <script>require('../lib/challenge.js')</script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+
+/* CHALLENGE BORDER BOX STYLES
+   -------------------------------------------------------------------------- */
+
+.chal-no-pass.border-box::before {
+  content: "Didn't Pass?";
+}
+
+.chal-tip.border-box::before {
+  content: "조언";
+}
+
+.chal-step.border-box::before {
+  content: "단계";
+}
+
+.chal-goal.border-box::before {
+  content: "목표";
+}
+
+ /* VERIFY
+    -------------------------------------------------------------------------- */
+
+ #directory-path:before {
+   content: '확인하기: ';
+ }
